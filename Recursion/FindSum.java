@@ -11,6 +11,13 @@ public class FindSum {
         }
         return N+findSum(N-1);
     }
+    public static void printSum(int N,int sum){
+        if(N==0){
+            System.out.println(sum);
+            return;
+        }
+        printSum(N-1, sum+N);
+    }
 
     //Using formula Time Complexity: O(1)  && Space Complexity: O(1)
     // public static int findSum(int N) {
@@ -22,6 +29,7 @@ public class FindSum {
         System.out.print("Enter a Number:- ");
         int num=sc.nextInt();
         System.out.println(findSum(num));
+        printSum(num, 0);
     }
     
 }

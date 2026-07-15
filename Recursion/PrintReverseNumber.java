@@ -17,21 +17,32 @@ public class PrintReverseNumber {
     // Time Complexity: O(N), we print every number from N to 1 using recursion
     // Space Complexity: O(N), stack space used for recursive calls.
     //Backtracking Recursion
-    public static void printNumbers(int current,int N) {
+    // public static void printNumbers(int current,int N) {
+    //     // Base case: if current exceeds n, stop recursion
+    //     if (current==0)
+    //         return;
+
+    //     // Recursive call with next number
+    //     printNumbers(current-1,N);
+    //     // Print current number
+    //     System.out.print(N-current+1 + " ");
+    // }
+    public static void printNumbersInReverseOrder(int current,int N) {
         // Base case: if current exceeds n, stop recursion
-        if (current==0)
+        if (current>N)
             return;
 
         // Recursive call with next number
-        printNumbers(current-1,N);
+        printNumbersInReverseOrder(current+1, N);
         // Print current number
-        System.out.print(N-current+1 + " ");
+        System.out.print(current + " ");
     }
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         System.out.print("Enter a Number:- ");
         int num=sc.nextInt();
         // printNumber(num);
-        printNumbers(num,num);  
+        // printNumbers(num,num); 
+        printNumbersInReverseOrder(1, num);
     }   
 }

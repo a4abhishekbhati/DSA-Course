@@ -27,6 +27,19 @@ public class ReverseOfArray {
             p2--;
         }
     }
+    public static void swap(int i,int j,int []arr) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        
+    }
+    public static void reverseArrayUsingRecursion(int[] arr,int s,int l){
+        if(s>=l)
+            return;
+        swap(s, l, arr);
+        reverseArrayUsingRecursion(arr, s+1, l-1);
+    }
+
 
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
@@ -41,6 +54,12 @@ public class ReverseOfArray {
         for(int ele:arr1){
             System.out.print(ele + " ");
         }
+        reverseArrayUsingRecursion(arr1, 0, num-1);
+        System.out.println();
+        for(int ele:arr1){
+            System.out.print(ele + " ");
+        }
+
     }
     
 }

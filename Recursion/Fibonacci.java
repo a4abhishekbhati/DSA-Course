@@ -3,7 +3,7 @@ package Recursion;
 import java.util.*;
 
 public class Fibonacci {
-    // Function to check if a string is a palindrome using recursion
+    // Function to check if a string is a palindrome 
     public static List<Integer> printFibonacci(int n) {
         int a=0;
         int b=1;
